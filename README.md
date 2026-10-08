@@ -2,12 +2,11 @@
 
 Browser chat interface with HTML, CSS, JavaScript, and a PHP proxy for OpenAI Chat Completions.
 
-## Repository guide
+## Setup and repository reference
 
-### Contents
+### Project structure
 
 - [LICENSE](LICENSE)
-- [README.md](README.md)
 - [chatgpt.png](chatgpt.png)
 - [config.php](config.php)
 - [gptchat.php](gptchat.php)
@@ -36,7 +35,11 @@ The backend uses the Chat Completions endpoint, checks requests and upstream err
 
 ### Validation
 
-Reviewed on 2026-10-08. PHP syntax checks and method/missing-input guards passed in a PHP WebAssembly runtime. Frontend literal-text rendering and network-error checks passed with Node; run `node tests/frontend.test.cjs`. Live API calls were not exercised.
+Audit: 2026-10-08. Repository structure, setup instructions and description were reviewed. 1 JavaScript files passed node --check; JSX/TypeScript production builds were not run. Syntax checks do not establish full runtime correctness. External APIs, live scraping, GUI interaction, notebook training and production deployment were not comprehensively exercised.
+
+### Repository description
+
+The short GitHub description is provided in [REPOSITORY_DESCRIPTION.md](REPOSITORY_DESCRIPTION.md).
 
 ### Contributions
 
