@@ -1,6 +1,6 @@
 # GPT-API-Integration-in-HTML-CSS-with-JS-PHP
 
-Browser chat interface with HTML, CSS, JavaScript, and a PHP proxy for a legacy OpenAI completion API.
+Browser chat interface with HTML, CSS, JavaScript, and a PHP proxy for OpenAI Chat Completions.
 
 ## Repository guide
 
@@ -24,7 +24,7 @@ git clone https://github.com/Raimal-Raja/GPT-API-Integration-in-HTML-CSS-with-JS
 cd GPT-API-Integration-in-HTML-CSS-with-JS-PHP
 ```
 
-Use a local PHP installation with the cURL extension. The backend needs an API migration before a live chat workflow can be considered working.
+Use a local PHP installation with the cURL extension. Set OPENAI_API_KEY and OPENAI_MODEL in the server environment; choose a Chat Completions model available to your account.
 
 ```bash
 php -S 127.0.0.1:8000
@@ -32,11 +32,11 @@ php -S 127.0.0.1:8000
 
 ### Configuration and limitations
 
-The PHP proxy still targets a legacy completion endpoint/model. Live API operation requires migration and a valid API key; PHP is unavailable in the review environment.
+The backend uses the Chat Completions endpoint, checks requests and upstream errors, and preserves the frontend response contract. Message text is rendered with textContent. Live API calls were not run; they require account access, configuration, and API usage charges. See the [official API schema](https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create).
 
 ### Validation
 
-Reviewed on 2026-10-08. JavaScript source files passed node --check. Browser interaction and production builds were not verified.
+Reviewed on 2026-10-08. PHP syntax checks and method/missing-input guards passed in a PHP WebAssembly runtime. Frontend literal-text rendering and network-error checks passed with Node; run `node tests/frontend.test.cjs`. Live API calls were not exercised.
 
 ### Contributions
 
